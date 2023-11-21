@@ -108,3 +108,34 @@ body
         background-position: 2000px 0;
     }
 }
+
+.img
+{
+    width: 70%;
+} 
+
+.beer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tum
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -200px;
+}
+
+.ten
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+
+
