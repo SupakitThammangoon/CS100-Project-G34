@@ -7,12 +7,21 @@
 
 body
 {
-    background-color: rgb(73, 73, 73);
+    background: linear-gradient(0deg,rgba(15,39,93,1)0%,rgba(0,5,8,1)70%);
     background-size: cover;
     background-position: center;
     box-sizing: border-box;
     font-family: sans-serif;
     font-size: 15px;
+    height: 100vh;
+    
+}
+#canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
     
 }
 .menu-bar
@@ -57,6 +66,17 @@ body
 {
     font-family: sans-serif;
     font-size: 50px;
-    color: white;
+    color: transparent;
     text-align: center;
+   -webkit-text-stroke: 1px #ffffff;
+   background: url(back.png);
+   -webkit-background-clip: text;
+   background-position: 0 0;
+   animation: back 20s linear infinite;
+
+}
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
 }
