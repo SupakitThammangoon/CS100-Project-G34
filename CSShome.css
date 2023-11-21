@@ -13,11 +13,11 @@ body
     box-sizing: border-box;
     font-family: sans-serif;
     font-size: 15px;
-    height: 100vh;
+   height: 100vh;
     
 }
 #canvas {
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     width: 100vw;
@@ -26,8 +26,11 @@ body
 }
 .menu-bar
 {
-    background-color:rgb(255, 176, 176) ;
+    background: linear-gradient(135deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     text-align: center;
+    position: relative;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .menu-bar ul
@@ -42,21 +45,45 @@ body
     width: 120px;
     margin: 10px;
     padding: 10px;
+    color: #ffffff;
+    transition: ease-out 0.3s;
+    outline: none;
+    position: relative;
+    z-index: 1;
 }
 
 .menu-bar ul li a 
 {
     text-decoration: none;
-    color: white;
+    border: none;
+    color: #ffffff;
 }
 
-.active, .menu-bar ul li:hover
+ .menu-bar ul li:hover
 {
-    background: rgb(0, 0, 0);
-    border-radius: 10px;
+    color: rgb(238, 214, 0);
+    cursor: pointer;
 
 }
-
+.menu-bar ul li::before{
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: #555555;
+    border-radius: 10px;
+}
+.menu-bar ul li:hover::before{
+    transition: 0.5s all ease ;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+}
 .menu-bar .fa
 {
     margin-right: 5px;
@@ -70,6 +97,7 @@ body
     text-align: center;
    -webkit-text-stroke: 1px #ffffff;
    background: url(back.png);
+   background-size: cover;
    -webkit-background-clip: text;
    background-position: 0 0;
    animation: back 20s linear infinite;
