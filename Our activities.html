@@ -47,7 +47,7 @@
 
 </div>
     <div class="form-container">
-        <h1>CSTU Passport</h1>
+        <h1>OUR ACTIVITY</h1>
         <!-- Main Form -->
         <form id="myForm" action="#" method="post">
           <!-- Firstname and Lastname Field -->
@@ -57,7 +57,16 @@
             <small>Only enter your first name and last name, middle name is not necessary.</small>
             <span id="fullnameError" class="error"></span>
           </div>
-          
+
+          <!-- Gender -->
+          <div class="form-group">
+            <label for="radio">Gender</label><br>
+            <input type="radio" id="male" name="gender">Male
+            <input type="radio" id="female" name="gender">Female<br>
+            <small>Please select your gender.</small>
+            <span id="genderError" class="error"></span>
+          </div>
+
           <!-- Student ID Field -->
           <div class="form-group">
             <label for="studentID">Student ID</label>
@@ -73,21 +82,23 @@
             <small>Please provide your university email in the format "xxx.yyy@dome.tu.ac.th".</small>
             <span id="emailError" class="error"></span>
           </div>
-    
+
+          <!-- Telephone Field -->
+          <div class="form-group">
+            <label for="TelID">Enter a phone number:</label>
+            <input type="text" id="TelID" name="TelID" placeholder="xxx-xxx-xxxx" >
+            <small>Format: xxx-xxx-xxxx</small>
+            <span id="TelIDError" class="error"></span>
+          </div>
+
           <!-- Work/Activity Title Field -->
           <div class="form-group">
             <label for="workTitle">Work/Activity Title</label>
             <input type="text" id="workTitle" name="workTitle" />
           </div>
-    
+
           <!-- Type of Work/Activity Field -->
           <div class="form-group">
-            <label for="activityType">Type of Work/Activity</label>
-            <select id="activityType" name="activityType">
-              <option value="" disabled selected>Select an option</option>
-            </select>
-          </div>
-          <!-- <div class="form-group">
             <label for="activityType">Type of Work/Activity</label>
             <select id="activityType" name="activityType">
               <option value="" disabled selected>Select an option</option>
@@ -99,8 +110,18 @@
               <option value="Competition">Competition</option>
               <option value="Computer Science">Computer Science</option>
             </select>
-          </div> -->
-    
+          </div>
+          
+          <!-- Feeling -->
+          <div class="form-group">
+            <label for="checkbox">Feeling after Work/Activity</label><br>
+            <input type="checkbox" id="excited" name="feeling">Excited
+            <input type="checkbox" id="okay" name="feeling">Okay
+            <input type="checkbox" id="tired" name="feeling">Tired<br>
+            <small>Please select your feeling to this Work/Activity.</small>
+            <span id="feelingError" class="error"></span>
+          </div>
+
           <!-- Academic Year Field -->
           <div class="form-group">
             <label for="academicYear">Academic Year</label>

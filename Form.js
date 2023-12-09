@@ -18,6 +18,37 @@ const config = {
     return true;
   }
   
+  // Function to validate Gender
+  function validateGender() {
+    const maleRadio = document.getElementById("male");
+    const femaleRadio = document.getElementById("female");
+    const errorElement = document.getElementById("genderError");
+  
+    if (!maleRadio.checked && !femaleRadio.checked) {
+      errorElement.textContent = "Please select your gender.";
+      return false; 
+    } else {
+      errorElement.textContent = ""; 
+    }
+    return true; 
+  }
+
+  // Function to validate Feeling
+  function validateFeeling() {
+    const excitedCheckbox = document.getElementById("excited");
+    const okayCheckbox = document.getElementById("okay");
+    const tiredCheckbox = document.getElementById("tired");
+    const errorElement = document.getElementById("feelingError");
+  
+    if (!excitedCheckbox.checked && !okayCheckbox.checked && !tiredCheckbox.checked) {
+      errorElement.textContent = "Please select your gender.";
+      return false; 
+    } else {
+      errorElement.textContent = ""; 
+    }
+    return true; 
+  }
+
   // Function to validate Student ID
   function validateStudentID() {
     const studentIDInput = document.getElementById("studentID");
@@ -33,6 +64,21 @@ const config = {
     return true;
   }
   
+  // Function to validate Telephone ID
+  function validateTelID() {
+    const TelIDInput = document.getElementById("TelID");
+    const TelIDPattern = /^\d{3}-\d{3}-\d{4}$/;
+    const errorElement = document.getElementById("TelIDError");
+  
+    if (!TelIDPattern.test(TelIDInput.value)) {
+      errorElement.textContent = "Please enter a valid phone number in the format xxx-xxx-xxxx.";
+      return false;
+    } else {
+      errorElement.textContent = ""; // Clear the error message when valid
+    }
+    return true;
+  }
+
   // Function to validate University Email
   function validateEmail() {
     const emailInput = document.getElementById("email");
@@ -48,12 +94,15 @@ const config = {
     }
     return true;
   }
-  
+
   // Function to validate form inputs on user input
   function validateFormOnInput() {
     validateName();
+    validateGender();
     validateStudentID();
     validateEmail();
+    validateTelID();
+    validateFeeling();
   }
   
   // Function to fetch activity types from the backend
@@ -97,7 +146,7 @@ const config = {
     event.preventDefault();
   
     // Validate form inputs before submission
-    if (!validateName() || !validateStudentID() || !validateEmail()) {
+    if (!validateName() || !validateGender() || !validateStudentID() || !validateEmail() || !validateTelID() || !validateFeeling()) {
       return;
     }
   
@@ -116,16 +165,19 @@ const config = {
     const data = {
       first_name: formData.get("fullname").split(" ")[0],
       last_name: formData.get("fullname").split(" ")[1],
+      gender: formData.get("gender"),
+      feeling: formData.get("feeling"),
       student_id: parseInt(formData.get("studentID")),
       email: formData.get("email"),
       title: formData.get("workTitle"),
+      tel_id: parseInt(formData.get("telID")),
       type_of_work_id: parseInt(formData.get("activityType")),
       academic_year: parseInt(formData.get("academicYear")) - 543,
       semester: parseInt(formData.get("semester")),
       start_date: formData.get("startDate"),
       end_date: formData.get("endDate"),
       location: formData.get("location"),
-      description: formData.get("description")
+      description: formData.get("description"),
     };
   
     console.log(data);
@@ -169,7 +221,10 @@ const config = {
   
   // Event listeners for input validation on user input
   document.getElementById("fullname").addEventListener("input", validateName);
+  document.getElementById("gender").addEventListener("input", validateGender);
   document
     .getElementById("studentID")
     .addEventListener("input", validateStudentID);
+  document.getElementById("TelID").addEventListener("input",validateTelID);
   document.getElementById("email").addEventListener("input", validateEmail);
+  document.getElementById("feeling").addEventListener("input", validateFeeling);
