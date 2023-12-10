@@ -177,7 +177,7 @@ const config = {
       start_date: formData.get("startDate"),
       end_date: formData.get("endDate"),
       location: formData.get("location"),
-      description: formData.get("description"),
+      description: formData.get("description")
     };
   
     console.log(data);
@@ -225,6 +225,6 @@ const config = {
   document
     .getElementById("studentID")
     .addEventListener("input", validateStudentID);
-  document.getElementById("TelID").addEventListener("input",validateTelID);
+  document.getElementById("TelID").addEventListener("input", validateTelID);
   document.getElementById("email").addEventListener("input", validateEmail);
   document.getElementById("feeling").addEventListener("input", validateFeeling);
