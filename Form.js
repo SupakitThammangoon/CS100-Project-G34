@@ -105,7 +105,7 @@ const config = {
     validateFeeling();
   }
   
-  // Function to fetch activity types from the backend
+  /*// Function to fetch activity types from the backend
   async function fetchActivityTypes() {
     try {
       const response = await fetch(`http://${window.location.hostname}:${port}/getActivityType`);
@@ -122,6 +122,7 @@ const config = {
     }
   }
   
+
   // Function to populate activity types in the select element
   function populateActivityTypes(activityTypes) {
     const activityTypeSelect = document.getElementById("activityType");
@@ -139,7 +140,7 @@ const config = {
     const activityTypes = await fetchActivityTypes();
     populateActivityTypes(activityTypes);
   });
-  
+  */
   // Function to submit the form
   // Function to submit the form
   async function submitForm(event) {
