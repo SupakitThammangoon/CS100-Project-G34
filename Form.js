@@ -170,7 +170,7 @@ const config = {
       student_id: parseInt(formData.get("studentID")),
       email: formData.get("email"),
       title: formData.get("workTitle"),
-      tel_id: formData.get("telID"),
+      tel_id: formData.get("TelID"),
       type_of_work: formData.get("activityType"),
       academic_year: parseInt(formData.get("academicYear")) - 543,
       semester: parseInt(formData.get("semester")),
@@ -221,10 +221,14 @@ const config = {
   
   // Event listeners for input validation on user input
   document.getElementById("fullname").addEventListener("input", validateName);
-  document.getElementById("gender").addEventListener("input", validateGender);
   document
     .getElementById("studentID")
     .addEventListener("input", validateStudentID);
   document.getElementById("TelID").addEventListener("input", validateTelID);
   document.getElementById("email").addEventListener("input", validateEmail);
-  document.getElementById("feeling").addEventListener("input", validateFeeling);
+  document.getElementById("excited").addEventListener("change", validateFeeling);
+  document.getElementById("okay").addEventListener("change", validateFeeling);
+  document.getElementById("tired").addEventListener("change", validateFeeling);
+  document.getElementById("male").addEventListener("change", validateGender);
+  document.getElementById("female").addEventListener("change", validateGender);
+
