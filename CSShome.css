@@ -187,7 +187,7 @@ img
 }*/
 .picvid-item:hover {
     transform: scale(1.25);
-    box-shadow: 0 25px 40px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 25px 40px rgb(0, 4, 255);
 }
 /*
 .tum:hover{
@@ -276,8 +276,8 @@ img
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: ;
-    background: linear-gradient(180deg,rgb(255,255, 255),#000000);
+    z-index: 0;
+    background: linear-gradient(180deg,rgb(255, 255, 255),#000000);
     mix-blend-mode: multiply;
     opacity: 0;
     transition: 0.5s;
@@ -287,7 +287,7 @@ img
 .picvid-item:hover .imgBx:before{
     opacity: 1;
 }
-.picvid-item .h2,{
+.picvid-item .h2{
     color: #ffffff;
     transition: 0.5s;
     text-transform: uppercase;
